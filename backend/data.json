@@ -9,49 +9,65 @@
           "id": "M0101",
           "name": "Member 1-1",
           "squad_id": "squad_1",
-          "email": "member11@org.com"
+          "email": "member11@org.com",
+          "role": "admin",
+          "password": "pass123"
         },
         {
           "id": "M0102",
           "name": "Member 1-2",
           "squad_id": "squad_1",
-          "email": "member12@org.com"
+          "email": "member12@org.com",
+          "role": "employee",
+          "password": "pass123"
         },
         {
           "id": "M0103",
           "name": "Member 1-3",
           "squad_id": "squad_1",
-          "email": "member13@org.com"
+          "email": "member13@org.com",
+          "role": "employee",
+          "password": "pass123"
         },
         {
           "id": "M0104",
           "name": "Member 1-4",
           "squad_id": "squad_1",
-          "email": "member14@org.com"
+          "email": "member14@org.com",
+          "role": "employee",
+          "password": "pass123"
         },
         {
           "id": "M0105",
           "name": "Member 1-5",
           "squad_id": "squad_1",
-          "email": "member15@org.com"
+          "email": "member15@org.com",
+          "role": "employee",
+          "password": "pass123"
         },
         {
           "id": "M0106",
           "name": "Member 1-6",
           "squad_id": "squad_1",
-          "email": "member16@org.com"
+          "email": "member16@org.com",
+          "role": "employee",
+          "password": "pass123"
         },
         {
           "id": "M0107",
           "name": "Member 1-7",
           "squad_id": "squad_1",
-          "email": "member17@org.com"
+          "email": "member17@org.com",
+          "role": "employee",
+          "password": "pass123"
         },
         {
           "id": "M0108",
           "name": "Member 1-8",
           "squad_id": "squad_1",
-          "email": "member18@org.com"
+          "email": "member18@org.com",
+          "role": "employee",
+          "password": "pass123"
         }
       ]
     },
@@ -64,49 +80,65 @@
           "id": "M0201",
           "name": "Member 2-1",
           "squad_id": "squad_2",
-          "email": "member21@org.com"
+          "email": "member21@org.com",
+          "role": "admin",
+          "password": "pass123"
         },
         {
           "id": "M0202",
           "name": "Member 2-2",
           "squad_id": "squad_2",
-          "email": "member22@org.com"
+          "email": "member22@org.com",
+          "role": "employee",
+          "password": "pass123"
         },
         {
           "id": "M0203",
           "name": "Member 2-3",
           "squad_id": "squad_2",
-          "email": "member23@org.com"
+          "email": "member23@org.com",
+          "role": "employee",
+          "password": "pass123"
         },
         {
           "id": "M0204",
           "name": "Member 2-4",
           "squad_id": "squad_2",
-          "email": "member24@org.com"
+          "email": "member24@org.com",
+          "role": "employee",
+          "password": "pass123"
         },
         {
           "id": "M0205",
           "name": "Member 2-5",
           "squad_id": "squad_2",
-          "email": "member25@org.com"
+          "email": "member25@org.com",
+          "role": "employee",
+          "password": "pass123"
         },
         {
           "id": "M0206",
           "name": "Member 2-6",
           "squad_id": "squad_2",
-          "email": "member26@org.com"
+          "email": "member26@org.com",
+          "role": "employee",
+          "password": "pass123"
         },
         {
           "id": "M0207",
           "name": "Member 2-7",
           "squad_id": "squad_2",
-          "email": "member27@org.com"
+          "email": "member27@org.com",
+          "role": "employee",
+          "password": "pass123"
         },
         {
           "id": "M0208",
           "name": "Member 2-8",
           "squad_id": "squad_2",
-          "email": "member28@org.com"
+          "email": "member28@org.com",
+          "role": "employee",
+          "password": "pass123"
         }
       ]
     },
@@ -119,49 +151,65 @@
           "id": "M0301",
           "name": "Member 3-1",
           "squad_id": "squad_3",
-          "email": "member31@org.com"
+          "email": "member31@org.com",
+          "role": "admin",
+          "password": "pass123"
         },
         {
           "id": "M0302",
           "name": "Member 3-2",
           "squad_id": "squad_3",
-          "email": "member32@org.com"
+          "email": "member32@org.com",
+          "role": "employee",
+          "password": "pass123"
         },
         {
           "id": "M0303",
           "name": "Member 3-3",
           "squad_id": "squad_3",
-          "email": "member33@org.com"
+          "email": "member33@org.com",
+          "role": "employee",
+          "password": "pass123"
         },
         {
           "id": "M0304",
           "name": "Member 3-4",
           "squad_id": "squad_3",
-          "email": "member34@org.com"
+          "email": "member34@org.com",
+          "role": "employee",
+          "password": "pass123"
         },
         {
           "id": "M0305",
           "name": "Member 3-5",
           "squad_id": "squad_3",
-          "email": "member35@org.com"
+          "email": "member35@org.com",
+          "role": "employee",
+          "password": "pass123"
         },
         {
           "id": "M0306",
           "name": "Member 3-6",
           "squad_id": "squad_3",
-          "email": "member36@org.com"
+          "email": "member36@org.com",
+          "role": "employee",
+          "password": "pass123"
         },
         {
           "id": "M0307",
           "name": "Member 3-7",
           "squad_id": "squad_3",
-          "email": "member37@org.com"
+          "email": "member37@org.com",
+          "role": "employee",
+          "password": "pass123"
         },
         {
           "id": "M0308",
           "name": "Member 3-8",
           "squad_id": "squad_3",
-          "email": "member38@org.com"
+          "email": "member38@org.com",
+          "role": "employee",
+          "password": "pass123"
         }
       ]
     },
@@ -174,49 +222,65 @@
           "id": "M0401",
           "name": "Member 4-1",
           "squad_id": "squad_4",
-          "email": "member41@org.com"
+          "email": "member41@org.com",
+          "role": "admin",
+          "password": "pass123"
         },
         {
           "id": "M0402",
           "name": "Member 4-2",
           "squad_id": "squad_4",
-          "email": "member42@org.com"
+          "email": "member42@org.com",
+          "role": "employee",
+          "password": "pass123"
         },
         {
           "id": "M0403",
           "name": "Member 4-3",
           "squad_id": "squad_4",
-          "email": "member43@org.com"
+          "email": "member43@org.com",
+          "role": "employee",
+          "password": "pass123"
         },
         {
           "id": "M0404",
           "name": "Member 4-4",
           "squad_id": "squad_4",
-          "email": "member44@org.com"
+          "email": "member44@org.com",
+          "role": "employee",
+          "password": "pass123"
         },
         {
           "id": "M0405",
           "name": "Member 4-5",
           "squad_id": "squad_4",
-          "email": "member45@org.com"
+          "email": "member45@org.com",
+          "role": "employee",
+          "password": "pass123"
         },
         {
           "id": "M0406",
           "name": "Member 4-6",
           "squad_id": "squad_4",
-          "email": "member46@org.com"
+          "email": "member46@org.com",
+          "role": "employee",
+          "password": "pass123"
         },
         {
           "id": "M0407",
           "name": "Member 4-7",
           "squad_id": "squad_4",
-          "email": "member47@org.com"
+          "email": "member47@org.com",
+          "role": "employee",
+          "password": "pass123"
         },
         {
           "id": "M0408",
           "name": "Member 4-8",
           "squad_id": "squad_4",
-          "email": "member48@org.com"
+          "email": "member48@org.com",
+          "role": "employee",
+          "password": "pass123"
         }
       ]
     },
@@ -229,49 +293,65 @@
           "id": "M0501",
           "name": "Member 5-1",
           "squad_id": "squad_5",
-          "email": "member51@org.com"
+          "email": "member51@org.com",
+          "role": "admin",
+          "password": "pass123"
         },
         {
           "id": "M0502",
           "name": "Member 5-2",
           "squad_id": "squad_5",
-          "email": "member52@org.com"
+          "email": "member52@org.com",
+          "role": "employee",
+          "password": "pass123"
         },
         {
           "id": "M0503",
           "name": "Member 5-3",
           "squad_id": "squad_5",
-          "email": "member53@org.com"
+          "email": "member53@org.com",
+          "role": "employee",
+          "password": "pass123"
         },
         {
           "id": "M0504",
           "name": "Member 5-4",
           "squad_id": "squad_5",
-          "email": "member54@org.com"
+          "email": "member54@org.com",
+          "role": "employee",
+          "password": "pass123"
         },
         {
           "id": "M0505",
           "name": "Member 5-5",
           "squad_id": "squad_5",
-          "email": "member55@org.com"
+          "email": "member55@org.com",
+          "role": "employee",
+          "password": "pass123"
         },
         {
           "id": "M0506",
           "name": "Member 5-6",
           "squad_id": "squad_5",
-          "email": "member56@org.com"
+          "email": "member56@org.com",
+          "role": "employee",
+          "password": "pass123"
         },
         {
           "id": "M0507",
           "name": "Member 5-7",
           "squad_id": "squad_5",
-          "email": "member57@org.com"
+          "email": "member57@org.com",
+          "role": "employee",
+          "password": "pass123"
         },
         {
           "id": "M0508",
           "name": "Member 5-8",
           "squad_id": "squad_5",
-          "email": "member58@org.com"
+          "email": "member58@org.com",
+          "role": "employee",
+          "password": "pass123"
         }
       ]
     },
@@ -284,49 +364,65 @@
           "id": "M0601",
           "name": "Member 6-1",
           "squad_id": "squad_6",
-          "email": "member61@org.com"
+          "email": "member61@org.com",
+          "role": "admin",
+          "password": "pass123"
         },
         {
           "id": "M0602",
           "name": "Member 6-2",
           "squad_id": "squad_6",
-          "email": "member62@org.com"
+          "email": "member62@org.com",
+          "role": "employee",
+          "password": "pass123"
         },
         {
           "id": "M0603",
           "name": "Member 6-3",
           "squad_id": "squad_6",
-          "email": "member63@org.com"
+          "email": "member63@org.com",
+          "role": "employee",
+          "password": "pass123"
         },
         {
           "id": "M0604",
           "name": "Member 6-4",
           "squad_id": "squad_6",
-          "email": "member64@org.com"
+          "email": "member64@org.com",
+          "role": "employee",
+          "password": "pass123"
         },
         {
           "id": "M0605",
           "name": "Member 6-5",
           "squad_id": "squad_6",
-          "email": "member65@org.com"
+          "email": "member65@org.com",
+          "role": "employee",
+          "password": "pass123"
         },
         {
           "id": "M0606",
           "name": "Member 6-6",
           "squad_id": "squad_6",
-          "email": "member66@org.com"
+          "email": "member66@org.com",
+          "role": "employee",
+          "password": "pass123"
         },
         {
           "id": "M0607",
           "name": "Member 6-7",
           "squad_id": "squad_6",
-          "email": "member67@org.com"
+          "email": "member67@org.com",
+          "role": "employee",
+          "password": "pass123"
         },
         {
           "id": "M0608",
           "name": "Member 6-8",
           "squad_id": "squad_6",
-          "email": "member68@org.com"
+          "email": "member68@org.com",
+          "role": "employee",
+          "password": "pass123"
         }
       ]
     },
@@ -339,49 +435,65 @@
           "id": "M0701",
           "name": "Member 7-1",
           "squad_id": "squad_7",
-          "email": "member71@org.com"
+          "email": "member71@org.com",
+          "role": "admin",
+          "password": "pass123"
         },
         {
           "id": "M0702",
           "name": "Member 7-2",
           "squad_id": "squad_7",
-          "email": "member72@org.com"
+          "email": "member72@org.com",
+          "role": "employee",
+          "password": "pass123"
         },
         {
           "id": "M0703",
           "name": "Member 7-3",
           "squad_id": "squad_7",
-          "email": "member73@org.com"
+          "email": "member73@org.com",
+          "role": "employee",
+          "password": "pass123"
         },
         {
           "id": "M0704",
           "name": "Member 7-4",
           "squad_id": "squad_7",
-          "email": "member74@org.com"
+          "email": "member74@org.com",
+          "role": "employee",
+          "password": "pass123"
         },
         {
           "id": "M0705",
           "name": "Member 7-5",
           "squad_id": "squad_7",
-          "email": "member75@org.com"
+          "email": "member75@org.com",
+          "role": "employee",
+          "password": "pass123"
         },
         {
           "id": "M0706",
           "name": "Member 7-6",
           "squad_id": "squad_7",
-          "email": "member76@org.com"
+          "email": "member76@org.com",
+          "role": "employee",
+          "password": "pass123"
         },
         {
           "id": "M0707",
           "name": "Member 7-7",
           "squad_id": "squad_7",
-          "email": "member77@org.com"
+          "email": "member77@org.com",
+          "role": "employee",
+          "password": "pass123"
         },
         {
           "id": "M0708",
           "name": "Member 7-8",
           "squad_id": "squad_7",
-          "email": "member78@org.com"
+          "email": "member78@org.com",
+          "role": "employee",
+          "password": "pass123"
         }
       ]
     },
@@ -394,49 +506,65 @@
           "id": "M0801",
           "name": "Member 8-1",
           "squad_id": "squad_8",
-          "email": "member81@org.com"
+          "email": "member81@org.com",
+          "role": "admin",
+          "password": "pass123"
         },
         {
           "id": "M0802",
           "name": "Member 8-2",
           "squad_id": "squad_8",
-          "email": "member82@org.com"
+          "email": "member82@org.com",
+          "role": "employee",
+          "password": "pass123"
         },
         {
           "id": "M0803",
           "name": "Member 8-3",
           "squad_id": "squad_8",
-          "email": "member83@org.com"
+          "email": "member83@org.com",
+          "role": "employee",
+          "password": "pass123"
         },
         {
           "id": "M0804",
           "name": "Member 8-4",
           "squad_id": "squad_8",
-          "email": "member84@org.com"
+          "email": "member84@org.com",
+          "role": "employee",
+          "password": "pass123"
         },
         {
           "id": "M0805",
           "name": "Member 8-5",
           "squad_id": "squad_8",
-          "email": "member85@org.com"
+          "email": "member85@org.com",
+          "role": "employee",
+          "password": "pass123"
         },
         {
           "id": "M0806",
           "name": "Member 8-6",
           "squad_id": "squad_8",
-          "email": "member86@org.com"
+          "email": "member86@org.com",
+          "role": "employee",
+          "password": "pass123"
         },
         {
           "id": "M0807",
           "name": "Member 8-7",
           "squad_id": "squad_8",
-          "email": "member87@org.com"
+          "email": "member87@org.com",
+          "role": "employee",
+          "password": "pass123"
         },
         {
           "id": "M0808",
           "name": "Member 8-8",
           "squad_id": "squad_8",
-          "email": "member88@org.com"
+          "email": "member88@org.com",
+          "role": "employee",
+          "password": "pass123"
         }
       ]
     },
@@ -449,49 +577,65 @@
           "id": "M0901",
           "name": "Member 9-1",
           "squad_id": "squad_9",
-          "email": "member91@org.com"
+          "email": "member91@org.com",
+          "role": "admin",
+          "password": "pass123"
         },
         {
           "id": "M0902",
           "name": "Member 9-2",
           "squad_id": "squad_9",
-          "email": "member92@org.com"
+          "email": "member92@org.com",
+          "role": "employee",
+          "password": "pass123"
         },
         {
           "id": "M0903",
           "name": "Member 9-3",
           "squad_id": "squad_9",
-          "email": "member93@org.com"
+          "email": "member93@org.com",
+          "role": "employee",
+          "password": "pass123"
         },
         {
           "id": "M0904",
           "name": "Member 9-4",
           "squad_id": "squad_9",
-          "email": "member94@org.com"
+          "email": "member94@org.com",
+          "role": "employee",
+          "password": "pass123"
         },
         {
           "id": "M0905",
           "name": "Member 9-5",
           "squad_id": "squad_9",
-          "email": "member95@org.com"
+          "email": "member95@org.com",
+          "role": "employee",
+          "password": "pass123"
         },
         {
           "id": "M0906",
           "name": "Member 9-6",
           "squad_id": "squad_9",
-          "email": "member96@org.com"
+          "email": "member96@org.com",
+          "role": "employee",
+          "password": "pass123"
         },
         {
           "id": "M0907",
           "name": "Member 9-7",
           "squad_id": "squad_9",
-          "email": "member97@org.com"
+          "email": "member97@org.com",
+          "role": "employee",
+          "password": "pass123"
         },
         {
           "id": "M0908",
           "name": "Member 9-8",
           "squad_id": "squad_9",
-          "email": "member98@org.com"
+          "email": "member98@org.com",
+          "role": "employee",
+          "password": "pass123"
         }
       ]
     },
@@ -504,49 +648,65 @@
           "id": "M1001",
           "name": "Member 10-1",
           "squad_id": "squad_10",
-          "email": "member101@org.com"
+          "email": "member101@org.com",
+          "role": "admin",
+          "password": "pass123"
         },
         {
           "id": "M1002",
           "name": "Member 10-2",
           "squad_id": "squad_10",
-          "email": "member102@org.com"
+          "email": "member102@org.com",
+          "role": "employee",
+          "password": "pass123"
         },
         {
           "id": "M1003",
           "name": "Member 10-3",
           "squad_id": "squad_10",
-          "email": "member103@org.com"
+          "email": "member103@org.com",
+          "role": "employee",
+          "password": "pass123"
         },
         {
           "id": "M1004",
           "name": "Member 10-4",
           "squad_id": "squad_10",
-          "email": "member104@org.com"
+          "email": "member104@org.com",
+          "role": "employee",
+          "password": "pass123"
         },
         {
           "id": "M1005",
           "name": "Member 10-5",
           "squad_id": "squad_10",
-          "email": "member105@org.com"
+          "email": "member105@org.com",
+          "role": "employee",
+          "password": "pass123"
         },
         {
           "id": "M1006",
           "name": "Member 10-6",
           "squad_id": "squad_10",
-          "email": "member106@org.com"
+          "email": "member106@org.com",
+          "role": "employee",
+          "password": "pass123"
         },
         {
           "id": "M1007",
           "name": "Member 10-7",
           "squad_id": "squad_10",
-          "email": "member107@org.com"
+          "email": "member107@org.com",
+          "role": "employee",
+          "password": "pass123"
         },
         {
           "id": "M1008",
           "name": "Member 10-8",
           "squad_id": "squad_10",
-          "email": "member108@org.com"
+          "email": "member108@org.com",
+          "role": "employee",
+          "password": "pass123"
         }
       ]
     }
@@ -557,400 +717,614 @@
       "number": 1,
       "is_floater": false,
       "row": 0,
-      "col": 0
+      "col": 0,
+      "floor": 1,
+      "zone": "A",
+      "amenities": [
+        "window",
+        "standing_desk"
+      ],
+      "is_blocked": false
     },
     "S02": {
       "id": "S02",
       "number": 2,
       "is_floater": false,
       "row": 0,
-      "col": 1
+      "col": 1,
+      "floor": 1,
+      "zone": "A",
+      "amenities": [
+        "standing_desk"
+      ],
+      "is_blocked": false
     },
     "S03": {
       "id": "S03",
       "number": 3,
       "is_floater": false,
       "row": 0,
-      "col": 2
+      "col": 2,
+      "floor": 1,
+      "zone": "A",
+      "amenities": [],
+      "is_blocked": false
     },
     "S04": {
       "id": "S04",
       "number": 4,
       "is_floater": false,
       "row": 0,
-      "col": 3
+      "col": 3,
+      "floor": 1,
+      "zone": "A",
+      "amenities": [],
+      "is_blocked": false
     },
     "S05": {
       "id": "S05",
       "number": 5,
       "is_floater": false,
       "row": 0,
-      "col": 4
+      "col": 4,
+      "floor": 1,
+      "zone": "B",
+      "amenities": [],
+      "is_blocked": false
     },
     "S06": {
       "id": "S06",
       "number": 6,
       "is_floater": false,
       "row": 0,
-      "col": 5
+      "col": 5,
+      "floor": 1,
+      "zone": "B",
+      "amenities": [
+        "near_printer"
+      ],
+      "is_blocked": false
     },
     "S07": {
       "id": "S07",
       "number": 7,
       "is_floater": false,
       "row": 0,
-      "col": 6
+      "col": 6,
+      "floor": 1,
+      "zone": "B",
+      "amenities": [],
+      "is_blocked": false
     },
     "S08": {
       "id": "S08",
       "number": 8,
       "is_floater": false,
       "row": 0,
-      "col": 7
+      "col": 7,
+      "floor": 1,
+      "zone": "C",
+      "amenities": [],
+      "is_blocked": false
     },
     "S09": {
       "id": "S09",
       "number": 9,
       "is_floater": false,
       "row": 0,
-      "col": 8
+      "col": 8,
+      "floor": 1,
+      "zone": "C",
+      "amenities": [
+        "near_printer",
+        "standing_desk"
+      ],
+      "is_blocked": false
     },
     "S10": {
       "id": "S10",
       "number": 10,
       "is_floater": false,
       "row": 0,
-      "col": 9
+      "col": 9,
+      "floor": 1,
+      "zone": "C",
+      "amenities": [
+        "window"
+      ],
+      "is_blocked": false
     },
     "S11": {
       "id": "S11",
       "number": 11,
       "is_floater": false,
       "row": 1,
-      "col": 0
+      "col": 0,
+      "floor": 1,
+      "zone": "A",
+      "amenities": [
+        "window",
+        "standing_desk"
+      ],
+      "is_blocked": false
     },
     "S12": {
       "id": "S12",
       "number": 12,
       "is_floater": false,
       "row": 1,
-      "col": 1
+      "col": 1,
+      "floor": 1,
+      "zone": "A",
+      "amenities": [
+        "standing_desk"
+      ],
+      "is_blocked": false
     },
     "S13": {
       "id": "S13",
       "number": 13,
       "is_floater": false,
       "row": 1,
-      "col": 2
+      "col": 2,
+      "floor": 1,
+      "zone": "A",
+      "amenities": [],
+      "is_blocked": false
     },
     "S14": {
       "id": "S14",
       "number": 14,
       "is_floater": false,
       "row": 1,
-      "col": 3
+      "col": 3,
+      "floor": 1,
+      "zone": "A",
+      "amenities": [],
+      "is_blocked": false
     },
     "S15": {
       "id": "S15",
       "number": 15,
       "is_floater": false,
       "row": 1,
-      "col": 4
+      "col": 4,
+      "floor": 1,
+      "zone": "B",
+      "amenities": [],
+      "is_blocked": false
     },
     "S16": {
       "id": "S16",
       "number": 16,
       "is_floater": false,
       "row": 1,
-      "col": 5
+      "col": 5,
+      "floor": 1,
+      "zone": "B",
+      "amenities": [
+        "near_printer"
+      ],
+      "is_blocked": false
     },
     "S17": {
       "id": "S17",
       "number": 17,
       "is_floater": false,
       "row": 1,
-      "col": 6
+      "col": 6,
+      "floor": 1,
+      "zone": "B",
+      "amenities": [],
+      "is_blocked": false
     },
     "S18": {
       "id": "S18",
       "number": 18,
       "is_floater": false,
       "row": 1,
-      "col": 7
+      "col": 7,
+      "floor": 1,
+      "zone": "C",
+      "amenities": [],
+      "is_blocked": false
     },
     "S19": {
       "id": "S19",
       "number": 19,
       "is_floater": false,
       "row": 1,
-      "col": 8
+      "col": 8,
+      "floor": 1,
+      "zone": "C",
+      "amenities": [
+        "near_printer",
+        "standing_desk"
+      ],
+      "is_blocked": false
     },
     "S20": {
       "id": "S20",
       "number": 20,
       "is_floater": false,
       "row": 1,
-      "col": 9
+      "col": 9,
+      "floor": 1,
+      "zone": "C",
+      "amenities": [
+        "window"
+      ],
+      "is_blocked": false
     },
     "S21": {
       "id": "S21",
       "number": 21,
       "is_floater": false,
       "row": 2,
-      "col": 0
+      "col": 0,
+      "floor": 2,
+      "zone": "A",
+      "amenities": [
+        "window",
+        "standing_desk"
+      ],
+      "is_blocked": false
     },
     "S22": {
       "id": "S22",
       "number": 22,
       "is_floater": false,
       "row": 2,
-      "col": 1
+      "col": 1,
+      "floor": 2,
+      "zone": "A",
+      "amenities": [
+        "standing_desk"
+      ],
+      "is_blocked": false
     },
     "S23": {
       "id": "S23",
       "number": 23,
       "is_floater": false,
       "row": 2,
-      "col": 2
+      "col": 2,
+      "floor": 2,
+      "zone": "A",
+      "amenities": [],
+      "is_blocked": false
     },
     "S24": {
       "id": "S24",
       "number": 24,
       "is_floater": false,
       "row": 2,
-      "col": 3
+      "col": 3,
+      "floor": 2,
+      "zone": "A",
+      "amenities": [],
+      "is_blocked": false
     },
     "S25": {
       "id": "S25",
       "number": 25,
       "is_floater": false,
       "row": 2,
-      "col": 4
+      "col": 4,
+      "floor": 2,
+      "zone": "B",
+      "amenities": [],
+      "is_blocked": false
     },
     "S26": {
       "id": "S26",
       "number": 26,
       "is_floater": false,
       "row": 2,
-      "col": 5
+      "col": 5,
+      "floor": 2,
+      "zone": "B",
+      "amenities": [
+        "near_printer"
+      ],
+      "is_blocked": false
     },
     "S27": {
       "id": "S27",
       "number": 27,
       "is_floater": false,
       "row": 2,
-      "col": 6
+      "col": 6,
+      "floor": 2,
+      "zone": "B",
+      "amenities": [],
+      "is_blocked": false
     },
     "S28": {
       "id": "S28",
       "number": 28,
       "is_floater": false,
       "row": 2,
-      "col": 7
+      "col": 7,
+      "floor": 2,
+      "zone": "C",
+      "amenities": [],
+      "is_blocked": false
     },
     "S29": {
       "id": "S29",
       "number": 29,
       "is_floater": false,
       "row": 2,
-      "col": 8
+      "col": 8,
+      "floor": 2,
+      "zone": "C",
+      "amenities": [
+        "near_printer",
+        "standing_desk"
+      ],
+      "is_blocked": false
     },
     "S30": {
       "id": "S30",
       "number": 30,
       "is_floater": false,
       "row": 2,
-      "col": 9
+      "col": 9,
+      "floor": 2,
+      "zone": "C",
+      "amenities": [
+        "window"
+      ],
+      "is_blocked": false
     },
     "S31": {
       "id": "S31",
       "number": 31,
       "is_floater": false,
       "row": 3,
-      "col": 0
+      "col": 0,
+      "floor": 2,
+      "zone": "A",
+      "amenities": [
+        "window",
+        "standing_desk"
+      ],
+      "is_blocked": false
     },
     "S32": {
       "id": "S32",
       "number": 32,
       "is_floater": false,
       "row": 3,
-      "col": 1
+      "col": 1,
+      "floor": 2,
+      "zone": "A",
+      "amenities": [
+        "standing_desk"
+      ],
+      "is_blocked": false
     },
     "S33": {
       "id": "S33",
       "number": 33,
       "is_floater": false,
       "row": 3,
-      "col": 2
+      "col": 2,
+      "floor": 2,
+      "zone": "A",
+      "amenities": [],
+      "is_blocked": false
     },
     "S34": {
       "id": "S34",
       "number": 34,
       "is_floater": false,
       "row": 3,
-      "col": 3
+      "col": 3,
+      "floor": 2,
+      "zone": "A",
+      "amenities": [],
+      "is_blocked": false
     },
     "S35": {
       "id": "S35",
       "number": 35,
       "is_floater": false,
       "row": 3,
-      "col": 4
+      "col": 4,
+      "floor": 2,
+      "zone": "B",
+      "amenities": [],
+      "is_blocked": false
     },
     "S36": {
       "id": "S36",
       "number": 36,
       "is_floater": false,
       "row": 3,
-      "col": 5
+      "col": 5,
+      "floor": 2,
+      "zone": "B",
+      "amenities": [
+        "near_printer"
+      ],
+      "is_blocked": false
     },
     "S37": {
       "id": "S37",
       "number": 37,
       "is_floater": false,
       "row": 3,
-      "col": 6
+      "col": 6,
+      "floor": 2,
+      "zone": "B",
+      "amenities": [],
+      "is_blocked": false
     },
     "S38": {
       "id": "S38",
       "number": 38,
       "is_floater": false,
       "row": 3,
-      "col": 7
+      "col": 7,
+      "floor": 2,
+      "zone": "C",
+      "amenities": [],
+      "is_blocked": false
     },
     "S39": {
       "id": "S39",
       "number": 39,
       "is_floater": false,
       "row": 3,
-      "col": 8
+      "col": 8,
+      "floor": 2,
+      "zone": "C",
+      "amenities": [
+        "near_printer",
+        "standing_desk"
+      ],
+      "is_blocked": false
     },
     "S40": {
       "id": "S40",
       "number": 40,
       "is_floater": false,
       "row": 3,
-      "col": 9
+      "col": 9,
+      "floor": 2,
+      "zone": "C",
+      "amenities": [
+        "window"
+      ],
+      "is_blocked": false
     },
     "S41": {
       "id": "S41",
       "number": 41,
       "is_floater": true,
       "row": 4,
-      "col": 0
+      "col": 0,
+      "floor": 3,
+      "zone": "A",
+      "amenities": [
+        "window",
+        "standing_desk"
+      ],
+      "is_blocked": false
     },
     "S42": {
       "id": "S42",
       "number": 42,
       "is_floater": true,
       "row": 4,
-      "col": 1
+      "col": 1,
+      "floor": 3,
+      "zone": "A",
+      "amenities": [
+        "standing_desk"
+      ],
+      "is_blocked": false
     },
     "S43": {
       "id": "S43",
       "number": 43,
       "is_floater": true,
       "row": 4,
-      "col": 2
+      "col": 2,
+      "floor": 3,
+      "zone": "A",
+      "amenities": [],
+      "is_blocked": false
     },
     "S44": {
       "id": "S44",
       "number": 44,
       "is_floater": true,
       "row": 4,
-      "col": 3
+      "col": 3,
+      "floor": 3,
+      "zone": "A",
+      "amenities": [],
+      "is_blocked": false
     },
     "S45": {
       "id": "S45",
       "number": 45,
       "is_floater": true,
       "row": 4,
-      "col": 4
+      "col": 4,
+      "floor": 3,
+      "zone": "B",
+      "amenities": [],
+      "is_blocked": false
     },
     "S46": {
       "id": "S46",
       "number": 46,
       "is_floater": true,
       "row": 4,
-      "col": 5
+      "col": 5,
+      "floor": 3,
+      "zone": "B",
+      "amenities": [
+        "near_printer"
+      ],
+      "is_blocked": false
     },
     "S47": {
       "id": "S47",
       "number": 47,
       "is_floater": true,
       "row": 4,
-      "col": 6
+      "col": 6,
+      "floor": 3,
+      "zone": "B",
+      "amenities": [],
+      "is_blocked": false
     },
     "S48": {
       "id": "S48",
       "number": 48,
       "is_floater": true,
       "row": 4,
-      "col": 7
+      "col": 7,
+      "floor": 3,
+      "zone": "C",
+      "amenities": [],
+      "is_blocked": false
     },
     "S49": {
       "id": "S49",
       "number": 49,
       "is_floater": true,
       "row": 4,
-      "col": 8
+      "col": 8,
+      "floor": 3,
+      "zone": "C",
+      "amenities": [
+        "near_printer",
+        "standing_desk"
+      ],
+      "is_blocked": false
     },
     "S50": {
       "id": "S50",
       "number": 50,
       "is_floater": true,
       "row": 4,
-      "col": 9
+      "col": 9,
+      "floor": 3,
+      "zone": "C",
+      "amenities": [
+        "window"
+      ],
+      "is_blocked": false
     }
   },
   "bookings": {
-    "2026-04-13_S41_M0101": {
-      "member": {
-        "id": "M0101",
-        "name": "Member 1-1",
-        "squad_id": "squad_1",
-        "email": "member11@org.com"
-      },
-      "seat": {
-        "id": "S41",
-        "number": 41,
-        "is_floater": true,
-        "row": 4,
-        "col": 0
-      },
-      "squad": {
-        "id": "squad_1",
-        "name": "Squad 1",
-        "batch": 1
-      },
-      "date": "2026-04-13",
-      "is_floater_use": true,
-      "booked_at": "2026-04-14T12:55:16.836806"
-    },
-    "2026-04-14_S41_M0101": {
-      "member": {
-        "id": "M0101",
-        "name": "Member 1-1",
-        "squad_id": "squad_1",
-        "email": "member11@org.com"
-      },
-      "seat": {
-        "id": "S41",
-        "number": 41,
-        "is_floater": true,
-        "row": 4,
-        "col": 0
-      },
-      "squad": {
-        "id": "squad_1",
-        "name": "Squad 1",
-        "batch": 1
-      },
-      "date": "2026-04-14",
-      "is_floater_use": true,
-      "booked_at": "2026-04-14T13:19:53.455658"
-    },
-    "2026-04-13_S44_M0308": {
+    "2026-04-13_S44_full_day_M0308": {
       "member": {
         "id": "M0308",
         "name": "Member 3-8",
@@ -971,9 +1345,93 @@
       },
       "date": "2026-04-13",
       "is_floater_use": true,
-      "booked_at": "2026-04-14T14:34:54.101592"
+      "booked_at": "2026-04-14T14:34:54.101592",
+      "time_slot": "full_day",
+      "id": "1c218b51"
+    },
+    "2026-04-16_S04_full_day_M0101": {
+      "member": {
+        "id": "M0101",
+        "name": "Member 1-1",
+        "squad_id": "squad_1",
+        "email": "member11@org.com"
+      },
+      "seat": {
+        "id": "S04",
+        "number": 4,
+        "is_floater": false,
+        "row": 0,
+        "col": 3
+      },
+      "squad": {
+        "id": "squad_1",
+        "name": "Squad 1",
+        "batch": 1
+      },
+      "date": "2026-04-16",
+      "is_floater_use": false,
+      "booked_at": "2026-04-14T18:15:13.646267",
+      "time_slot": "full_day",
+      "id": "10dc23bc"
     }
   },
   "vacations": {},
-  "blocks": {}
+  "blocks": {
+    "2026-04-15_S41_M0303": {
+      "member": {
+        "id": "M0303",
+        "name": "Member 3-3",
+        "squad_id": "squad_3",
+        "email": "member33@org.com"
+      },
+      "seat": {
+        "id": "S41",
+        "number": 41,
+        "is_floater": true,
+        "row": 4,
+        "col": 0
+      },
+      "squad": {
+        "id": "squad_3",
+        "name": "Squad 3",
+        "batch": 1
+      },
+      "date": "2026-04-15",
+      "blocked_at": "2026-04-14T15:05:03.736931"
+    },
+    "2026-04-15_S02_M0101": {
+      "member": {
+        "id": "M0101",
+        "name": "Member 1-1",
+        "squad_id": "squad_1",
+        "email": "member11@org.com"
+      },
+      "seat": {
+        "id": "S02",
+        "number": 2,
+        "is_floater": false,
+        "row": 0,
+        "col": 1
+      },
+      "squad": {
+        "id": "squad_1",
+        "name": "Squad 1",
+        "batch": 1
+      },
+      "date": "2026-04-15",
+      "blocked_at": "2026-04-14T18:12:47.176113"
+    }
+  },
+  "checkins": {},
+  "notifications": {
+    "23c7f4b2": {
+      "id": "23c7f4b2",
+      "member_id": "M0101",
+      "message": "\u26a0\ufe0f Your seat S46 was auto-released (no check-in after 30 min)",
+      "type": "warning",
+      "read": false,
+      "timestamp": "2026-04-14T21:47:42.882579"
+    }
+  },
+  "recurring_bookings": {}
 }

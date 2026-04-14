@@ -1,71 +1,89 @@
 import React from 'react';
-import {
-  LayoutDashboard, Map, CalendarDays, User, Armchair,
-  ShieldCheck, Palmtree, Users, PanelLeftClose, PanelLeft
+import { 
+  LayoutDashboard, Grid, CalendarDays, User, 
+  Armchair, Ban, Palmtree, Users, ChevronLeft,
+  ChevronRight, LogOut, Clock, QrCode, Shield
 } from 'lucide-react';
-import { getSquadColor, getInitials } from './utils';
 
-const NAV_ITEMS = [
-  { id: 'dashboard', label: 'Dashboard', icon: LayoutDashboard },
-  { id: 'floorplan', label: 'Floor Plan', icon: Map },
-  { id: 'weekview', label: 'Week View', icon: CalendarDays },
-  { id: 'myschedule', label: 'My Schedule', icon: User },
-  { id: 'bookseat', label: 'Book a Seat', icon: Armchair },
-  { id: 'blockseat', label: 'Block Seat', icon: ShieldCheck },
-  { id: 'vacation', label: 'Vacation', icon: Palmtree },
-  { id: 'squads', label: 'Squads', icon: Users },
-];
+export default function Sidebar({ page, setPage, collapsed, setCollapsed, currentMember, onLogout }) {
+  const navItems = [
+    { id: 'dashboard', label: 'Dashboard', icon: <LayoutDashboard size={20} /> },
+    { id: 'floorplan', label: 'Floor Plan', icon: <Grid size={20} /> },
+    { id: 'weekview', label: 'Week View', icon: <CalendarDays size={20} /> },
+    { id: 'squads', label: 'Squads Directory', icon: <Users size={20} /> },
+  ];
 
-export default function Sidebar({ page, setPage, collapsed, setCollapsed, currentMember }) {
+  const personalItems = [
+    { id: 'bookseat', label: 'Book a Seat', icon: <Armchair size={20} /> },
+    { id: 'checkin', label: 'Check-In (QR)', icon: <QrCode size={20} /> },
+    { id: 'myschedule', label: 'My Schedule', icon: <User size={20} /> },
+    { id: 'history', label: 'Booking History', icon: <Clock size={20} /> },
+    { id: 'blockseat', label: 'Block Seat', icon: <Ban size={20} /> },
+    { id: 'vacation', label: 'Vacation', icon: <Palmtree size={20} /> },
+  ];
+
   return (
     <div className={`sidebar ${collapsed ? 'collapsed' : ''}`}>
-      <div className="sidebar-logo">
-        <div className="logo-icon">💺</div>
-        {!collapsed && (
-          <h1>Seat<span>Flow</span></h1>
-        )}
+      <div className="sidebar-header">
+        <div className="logo-area">
+          <Armchair size={24} color="var(--brand)" />
+          {!collapsed && <h1>SeatFlow</h1>}
+        </div>
+        <button className="collapse-btn" onClick={() => setCollapsed(!collapsed)}>
+          {collapsed ? <ChevronRight size={18} /> : <ChevronLeft size={18} />}
+        </button>
       </div>
 
-      <nav className="sidebar-nav">
-        {NAV_ITEMS.map(item => {
-          const Icon = item.icon;
-          return (
-            <div
-              key={item.id}
-              className={`nav-item ${page === item.id ? 'active' : ''}`}
-              onClick={() => setPage(item.id)}
-              id={`nav-${item.id}`}
-            >
-              <Icon size={20} />
-              {!collapsed && <span>{item.label}</span>}
-            </div>
-          );
-        })}
-      </nav>
-
-      {currentMember && (
-        <div className="sidebar-member">
-          <div
-            className="member-avatar"
-            style={{
-              background: getSquadColor(currentMember.squad_id),
-              color: '#fff',
-            }}
+      <div className="nav-group">
+        {!collapsed && <div className="nav-group-title">Overview</div>}
+        {navItems.map(item => (
+          <button
+            key={item.id}
+            className={`nav-item ${page === item.id ? 'active' : ''}`}
+            onClick={() => setPage(item.id)}
+            title={collapsed ? item.label : ''}
           >
-            {getInitials(currentMember.name)}
-          </div>
-          {!collapsed && (
-            <div className="sidebar-member-info">
-              <div className="member-name">{currentMember.name}</div>
-              <div className="member-squad">{currentMember.squad_id?.replace('_', ' ')}</div>
-            </div>
-          )}
+            {item.icon}
+            {!collapsed && <span>{item.label}</span>}
+          </button>
+        ))}
+      </div>
+
+      <div className="nav-group">
+        {!collapsed && <div className="nav-group-title">Me</div>}
+        {personalItems.map(item => (
+          <button
+            key={item.id}
+            className={`nav-item ${page === item.id ? 'active' : ''}`}
+            onClick={() => setPage(item.id)}
+            title={collapsed ? item.label : ''}
+          >
+            {item.icon}
+            {!collapsed && <span>{item.label}</span>}
+          </button>
+        ))}
+      </div>
+
+      {currentMember?.role === 'admin' && (
+        <div className="nav-group">
+          {!collapsed && <div className="nav-group-title">Admin</div>}
+          <button
+            className={`nav-item ${page === 'admin' ? 'active' : ''} admin-nav`}
+            onClick={() => setPage('admin')}
+            title={collapsed ? 'Admin Panel' : ''}
+          >
+            <Shield size={20} />
+            {!collapsed && <span>Admin Panel</span>}
+          </button>
         </div>
       )}
 
-      <div className="sidebar-toggle">
-        <button onClick={() => setCollapsed(!collapsed)} id="sidebar-toggle-btn">
-          {collapsed ? <PanelLeft size={18} /> : <PanelLeftClose size={18} />}
+      <div style={{ flex: 1 }}></div>
+
+      <div className="nav-group" style={{ marginBottom: '20px' }}>
+        <button className="nav-item text-danger" onClick={onLogout} title={collapsed ? 'Logout' : ''}>
+          <LogOut size={20} />
+          {!collapsed && <span>Logout</span>}
         </button>
       </div>
     </div>

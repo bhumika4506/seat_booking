@@ -111,15 +111,16 @@ export default function Vacation({ weekStart, currentMember }) {
 
               {!isHoliday && (
                 <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
-                  {/* Status badges */}
+                  {/* Status badges — hide designation when on vacation */}
                   <div style={{ display: 'flex', gap: '6px', flexWrap: 'wrap' }}>
-                    {day.is_designated && <span className="badge badge-green">Designated</span>}
-                    {!day.is_designated && <span className="badge badge-orange">Non-Designated</span>}
-                    {hasBooking && (
+                    {!isOnVacation && day.is_designated && <span className="badge badge-green">Designated</span>}
+                    {!isOnVacation && !day.is_designated && <span className="badge badge-orange">Non-Designated</span>}
+                    {hasBooking && !isOnVacation && (
                       <span className="badge badge-blue">
                         Seat {day.booking.seat?.id}
                       </span>
                     )}
+                    {isOnVacation && <span className="badge" style={{ background: 'var(--purple-light)', color: 'var(--purple)' }}>🌴 Vacation</span>}
                   </div>
 
                   {/* Vacation status */}

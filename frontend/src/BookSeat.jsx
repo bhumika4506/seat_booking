@@ -1,26 +1,29 @@
 import React, { useState, useEffect } from 'react';
-import { getWeekAllocation, bookSeat as bookSeatApi, getHolidays } from './api';
+import { getWeekAllocation, bookSeat as bookSeatApi, bookRecurring, getHolidays } from './api';
 import { formatDisplay, dayName, formatDate, getSquadColor } from './utils';
 import { addDays } from 'date-fns';
-import { ChevronLeft, ChevronRight, CheckCircle, Armchair } from 'lucide-react';
+import { ChevronLeft, ChevronRight, CheckCircle, Armchair, Repeat, Clock } from 'lucide-react';
 import { useToast } from './Toast';
 
-export default function BookSeat({ weekStart, currentMember }) {
+export default function BookSeat({ weekStart, currentMember, wsEvent }) {
   const [allocation, setAllocation] = useState(null);
   const [holidays, setHolidays] = useState([]);
   const [loading, setLoading] = useState(true);
   const [localWeek, setLocalWeek] = useState(weekStart);
   const [selectedDay, setSelectedDay] = useState(null);
   const [selectedSeat, setSelectedSeat] = useState(null);
-  const [filter, setFilter] = useState('all');
+  
+  // New features state
+  const [timeSlot, setTimeSlot] = useState('full_day');
+  const [isRecurring, setIsRecurring] = useState(false);
+  const [occurrences, setOccurrences] = useState(4);
+  const [floorFilter, setFloorFilter] = useState('all');
+  const [zoneFilter, setZoneFilter] = useState('all');
+
   const [booking, setBooking] = useState(false);
   const toast = useToast();
 
-  useEffect(() => {
-    setLocalWeek(weekStart);
-  }, [weekStart]);
-
-  useEffect(() => {
+  const fetchData = () => {
     setLoading(true);
     Promise.all([getWeekAllocation(localWeek), getHolidays()])
       .then(([a, h]) => {
@@ -29,7 +32,11 @@ export default function BookSeat({ weekStart, currentMember }) {
       })
       .catch(() => toast('Failed to load booking data', 'error'))
       .finally(() => setLoading(false));
-  }, [localWeek]);
+  };
+
+  useEffect(() => { setLocalWeek(weekStart); }, [weekStart]);
+  useEffect(() => { fetchData(); }, [localWeek]);
+  useEffect(() => { if (wsEvent && wsEvent.type !== 'checkin_update') fetchData(); }, [wsEvent]);
 
   const navWeek = (dir) => {
     const d = new Date(localWeek + 'T00:00:00');
@@ -42,12 +49,15 @@ export default function BookSeat({ weekStart, currentMember }) {
     if (!selectedDay || !selectedSeat || !currentMember) return;
     setBooking(true);
     try {
-      await bookSeatApi({ member_id: currentMember.id, seat_id: selectedSeat.id, date: selectedDay });
-      toast('Seat booked successfully!', 'success');
-      // Refresh
-      const a = await getWeekAllocation(localWeek);
-      setAllocation(a);
+      if (isRecurring) {
+        await bookRecurring({ member_id: currentMember.id, seat_id: selectedSeat.id, start_date: selectedDay, time_slot: timeSlot, occurrences });
+        toast(`Recurring booking set for ${occurrences} weeks!`, 'success');
+      } else {
+        await bookSeatApi({ member_id: currentMember.id, seat_id: selectedSeat.id, date: selectedDay, time_slot: timeSlot });
+        toast('Seat booked successfully!', 'success');
+      }
       setSelectedSeat(null);
+      fetchData();
     } catch (e) {
       toast(e.response?.data?.detail || 'Booking failed', 'error');
     } finally {
@@ -55,21 +65,12 @@ export default function BookSeat({ weekStart, currentMember }) {
     }
   };
 
-  if (!currentMember) {
-    return (
-      <div className="card" style={{ textAlign: 'center', padding: '60px' }}>
-        <h2 style={{ marginBottom: '8px' }}>👤 Select a Member</h2>
-        <p style={{ color: 'var(--ink-muted)' }}>Use the member selector in the top bar</p>
-      </div>
-    );
-  }
-
-  if (loading) return <div className="spinner-wrap"><div className="spinner"></div></div>;
+  if (!currentMember) return null;
+  if (loading && !allocation) return <div className="spinner-wrap"><div className="spinner"></div></div>;
   if (!allocation) return null;
 
   const dayKeys = Object.keys(allocation).sort();
 
-  // Check member's designated days
   function getISOWeek(d) {
     const date = new Date(d);
     date.setHours(0, 0, 0, 0);
@@ -88,13 +89,8 @@ export default function BookSeat({ weekStart, currentMember }) {
 
   const dayData = selectedDay ? allocation[selectedDay] : null;
 
-  const getAvailableSeats = (dk) => {
-    if (!allocation[dk]) return 0;
-    return Object.values(allocation[dk].seats).filter(s => s.status === 'available').length;
-  };
-
   const isDayDesignated = (dk) => {
-    const dow = new Date(dk + 'T00:00:00').getDay() - 1; // 0=Mon
+    const dow = new Date(dk + 'T00:00:00').getDay() - 1;
     if (dow < 0) return false;
     return designatedDows.includes(dow);
   };
@@ -105,8 +101,8 @@ export default function BookSeat({ weekStart, currentMember }) {
     displaySeats = Object.values(dayData.seats)
       .filter(s => {
         if (!isDesig && !s.is_floater) return false;
-        if (filter === 'fixed') return !s.is_floater;
-        if (filter === 'floater') return s.is_floater;
+        if (floorFilter !== 'all' && s.floor !== parseInt(floorFilter)) return false;
+        if (zoneFilter !== 'all' && s.zone !== zoneFilter) return false;
         return true;
       })
       .sort((a, b) => a.number - b.number);
@@ -128,9 +124,7 @@ export default function BookSeat({ weekStart, currentMember }) {
             {dayKeys.map(dk => {
               const day = allocation[dk];
               const isHoliday = day.is_holiday;
-              const isDesig = isDayDesignated(dk);
               const disabled = isHoliday;
-              const free = getAvailableSeats(dk);
 
               return (
                 <div
@@ -143,14 +137,11 @@ export default function BookSeat({ weekStart, currentMember }) {
                   }}
                 >
                   <div>
-                    <div style={{ fontWeight: 600, fontSize: '0.9rem' }}>
-                      {dayName(dk)} · {formatDisplay(dk)}
-                    </div>
+                    <div style={{ fontWeight: 600, fontSize: '0.9rem' }}>{dayName(dk)} · {formatDisplay(dk)}</div>
                     <div style={{ fontSize: '0.75rem', color: 'var(--ink-muted)', marginTop: '2px' }}>
-                      {isHoliday ? '🚫 Holiday' : isDesig ? '✓ Designated' : '○ Non-Designated'}
+                      {isHoliday ? '🚫 Holiday' : isDayDesignated(dk) ? '✓ Designated' : '○ Non-Designated'}
                     </div>
                   </div>
-                  {!isHoliday && <span className="free-count">{free} free</span>}
                 </div>
               );
             })}
@@ -161,18 +152,27 @@ export default function BookSeat({ weekStart, currentMember }) {
         <div>
           {selectedDay ? (
             <>
-              <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '16px' }}>
-                <h3 style={{ fontSize: '0.95rem' }}>2. Select Seat — {dayName(selectedDay)}</h3>
-                <div className="filter-bar" style={{ marginBottom: 0 }}>
-                  {['all', 'fixed', 'floater'].map(f => (
-                    <button
-                      key={f}
-                      className={`filter-chip ${filter === f ? 'active' : ''}`}
-                      onClick={() => setFilter(f)}
-                    >
-                      {f === 'all' ? 'All' : f === 'fixed' ? 'Fixed' : 'Floater'}
-                    </button>
-                  ))}
+              {/* Sidebar Filters */}
+              <div style={{ display: 'flex', gap: '12px', marginBottom: '16px', flexWrap: 'wrap' }}>
+                <select className="form-input" style={{ width: '120px' }} value={floorFilter} onChange={e => setFloorFilter(e.target.value)}>
+                  <option value="all">All Floors</option>
+                  <option value="1">Floor 1</option>
+                  <option value="2">Floor 2</option>
+                  <option value="3">Floor 3</option>
+                </select>
+                <select className="form-input" style={{ width: '120px' }} value={zoneFilter} onChange={e => setZoneFilter(e.target.value)}>
+                  <option value="all">All Zones</option>
+                  <option value="A">Zone A</option>
+                  <option value="B">Zone B</option>
+                  <option value="C">Zone C</option>
+                </select>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '4px', background: '#fff', padding: '0 8px', borderRadius: '8px', border: '1px solid var(--border)' }}>
+                  <Clock size={16} color="var(--ink-muted)" />
+                  <select className="form-input" style={{ border: 'none', background: 'transparent' }} value={timeSlot} onChange={e => setTimeSlot(e.target.value)}>
+                    <option value="full_day">Full Day</option>
+                    <option value="morning">Morning (9AM - 1PM)</option>
+                    <option value="afternoon">Afternoon (1PM - 6PM)</option>
+                  </select>
                 </div>
               </div>
 
@@ -185,12 +185,13 @@ export default function BookSeat({ weekStart, currentMember }) {
               <div className="card">
                 <div className="seat-grid">
                   {displaySeats.map(seat => {
-                    const isAvail = seat.status === 'available';
+                    const isAvail = seat.status === 'available' || 
+                                   (seat.status === 'partial' && !seat.bookings.some(b => b.time_slot === timeSlot || b.time_slot === 'full_day'));
                     const isSelected = selectedSeat?.id === seat.id;
 
                     return (
                       <React.Fragment key={seat.id}>
-                        {seat.number === 41 && filter === 'all' && isDayDesignated(selectedDay) && (
+                        {seat.number === 41 && isDayDesignated(selectedDay) && (
                           <div className="floater-zone-label">🔄 Floater Zone</div>
                         )}
                         <div
@@ -199,7 +200,7 @@ export default function BookSeat({ weekStart, currentMember }) {
                           onClick={() => isAvail && setSelectedSeat(seat)}
                         >
                           <span className="seat-number">{seat.id}</span>
-                          {seat.booking && <span className="seat-member">{seat.booking.member?.name}</span>}
+                          <span style={{ fontSize: '0.65rem', color: isAvail ? 'var(--ink-muted)' : 'rgba(255,255,255,0.7)' }}>Floor {seat.floor}</span>
                           {isAvail && isSelected && <CheckCircle size={14} style={{ marginTop: '2px' }} />}
                         </div>
                       </React.Fragment>
@@ -211,19 +212,25 @@ export default function BookSeat({ weekStart, currentMember }) {
               {/* Confirm */}
               {selectedSeat && (
                 <div className="booking-confirm">
-                  <div>
-                    <strong>Book {selectedSeat.id}</strong>
-                    <span style={{ color: 'var(--ink-muted)', marginLeft: '8px' }}>
-                      {selectedSeat.is_floater ? 'Floater' : 'Fixed'} seat on {dayName(selectedDay)} {formatDisplay(selectedDay)}
-                    </span>
+                  <div style={{ flex: 1 }}>
+                    <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '8px' }}>
+                      <strong>Book {selectedSeat.id} on {dayName(selectedDay)} {formatDisplay(selectedDay)}</strong>
+                      <label style={{ display: 'flex', alignItems: 'center', gap: '6px', cursor: 'pointer', fontSize: '0.9rem' }}>
+                        <input type="checkbox" checked={isRecurring} onChange={e => setIsRecurring(e.target.checked)} />
+                        <Repeat size={14} /> Repeat Weekly
+                      </label>
+                    </div>
+                    
+                    {isRecurring && (
+                      <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginTop: '8px' }}>
+                        <span style={{ fontSize: '0.85rem' }}>For</span>
+                        <input type="number" min="2" max="10" value={occurrences} onChange={e => setOccurrences(parseInt(e.target.value) || 2)} className="form-input" style={{ width: '60px', padding: '4px' }} />
+                        <span style={{ fontSize: '0.85rem' }}>weeks</span>
+                      </div>
+                    )}
                   </div>
-                  <button
-                    className="btn btn-primary"
-                    onClick={handleBook}
-                    disabled={booking}
-                    id="confirm-booking-btn"
-                  >
-                    {booking ? 'Booking...' : 'Confirm Booking'}
+                  <button className="btn btn-primary" onClick={handleBook} disabled={booking} id="confirm-booking-btn">
+                    {booking ? 'Booking...' : (isRecurring ? `Book ${occurrences} Weeks` : 'Confirm Booking')}
                   </button>
                 </div>
               )}
